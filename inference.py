@@ -89,7 +89,10 @@ def main():
     load(loader, sess, args.model_weights)
     
     # Perform inference.
+    #gives per pixel prediction
     preds = sess.run(pred)
+
+    pred_unique = np.unique(preds.flatten())
     
     msk = decode_labels(preds, num_classes=args.num_classes)
     im = Image.fromarray(msk[0])
