@@ -1,0 +1,4 @@
+*.ckpt
+/snapshots
+/server_output
+*.jpg

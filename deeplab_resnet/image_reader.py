@@ -84,7 +84,8 @@ def read_labeled_image_list(data_dir, data_list):
     masks = []
     for line in f:
         try:
-            image, mask = line.strip("\n").split(' ')
+            image, mask = line.strip("\n").split(' $$ ')
+            temp = 0
         except ValueError: # Adhoc for test.
             image = mask = line.strip("\n")
         images.append(data_dir + image)

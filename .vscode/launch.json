@@ -1,0 +1,31 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Inference configuration",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "args": ["--save-dir", "output/", "1_2.jpg", "snapshots/model.ckpt-100", "--num-classes", "2"]
+        },
+        {
+            "name": "Train configuration",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "args": [
+                "--num-classes",
+                "2",
+                "--not-restore-last",
+                "--data-dir",
+                "train_folder/",
+                "--data-list",
+                "train_dataset.txt",
+                "--num-steps",
+                "1"
+            ]
+        }
+    ]
+}
